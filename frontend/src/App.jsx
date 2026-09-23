@@ -1,4 +1,4 @@
-import AppRoutes from "./appRoutes"
+import AppRoutes from "./AppRoutes"
 import { AuthProvider } from "./featurea/auth/authContext"
 import {InterviewProvider} from "./featurea/interview/interviewContext"
 
