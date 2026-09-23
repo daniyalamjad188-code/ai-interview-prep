@@ -8,7 +8,10 @@ const interviewRouter = require("./routes/interviewRoutes")
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://ai-interview-prep-chi-ecru.vercel.app"
+    ],
     credentials: true
 }));
 
