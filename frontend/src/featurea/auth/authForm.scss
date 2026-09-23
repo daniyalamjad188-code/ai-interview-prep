@@ -1,0 +1,52 @@
+main{
+ min-height: 100vh;
+ width: 100%;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+
+ form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+ }
+
+ .button{
+    border-radius: 1rem;
+    background-color: rgb(219, 14, 66);
+    padding: 0.75rem 1rem;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+ }
+
+ .button:hover{
+    transform: scale(1.04);
+    transition: all 0.3s ease-in-out;
+
+ }
+
+ .input-group{
+    display: flex;
+    flex-direction: column;
+     gap: 0.5rem;
+
+     input{
+        border: none;
+        outline: none;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        width: 270px;
+     }
+ }
+
+ a{
+    text-decoration: none;
+    color: rgb(219, 14, 66);
+ }
+
+}
