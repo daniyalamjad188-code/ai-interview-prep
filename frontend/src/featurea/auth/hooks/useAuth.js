@@ -13,7 +13,7 @@ export const useAuth = () => {
       const data = await login({ email, password });
       setUser(data.user);
     } catch (error) {
-        console.log(error)
+        throw error;
     } finally {
       setLoading(false);
     }
@@ -26,6 +26,7 @@ export const useAuth = () => {
       setUser(data.user);
     } catch (error) {
         console.log(error)
+        throw error;
     } finally {
       setLoading(false);
     }

@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import "../style/home.scss"
 import { useInterview } from '../hooks/useInterview.js'
 import { useNavigate } from 'react-router'
+import { useAuth } from '../../auth/hooks/useAuth.js'
 
 const Home = () => {
 
@@ -11,6 +12,12 @@ const Home = () => {
     const resumeInputRef = useRef()
 
     const navigate = useNavigate()
+const { handleLogout } = useAuth()
+
+const logout = async () => {
+    await handleLogout()
+    navigate("/login")
+}
 
     const handleGenerateReport = async () => {
         const resumeFile = resumeInputRef.current.files[ 0 ]
@@ -26,8 +33,13 @@ const Home = () => {
         )
     }
 
+    
+
     return (
         <div className='home-page'>
+            <button className="logout-btn" onClick={logout}>
+    Logout
+</button>
 
             {/* Page Header */}
             <header className='page-header'>

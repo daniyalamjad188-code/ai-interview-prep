@@ -11,11 +11,16 @@ const Login = () => {
 
     const [email,setEmail] =useState("")
     const [password,setPassword] = useState("")
+    const [error,setError]= useState("")
 
     const handleSubmit= async (e)=>{
         e.preventDefault()
+        try{
         await handleLogin({email, password})
-        navigate("/")
+        navigate("/")}
+      catch(error){
+    setError(error.response.data.message)
+}
     }
 
     if(loading){
@@ -40,6 +45,7 @@ const Login = () => {
                 onChange={(e)=>{setPassword(e.target.value)}}
                 type="password" name='password' placeholder='Enter password' />
             </div>
+            {error && <p>{error}</p>}
             <button className='button'>Login</button>
             </form> 
 

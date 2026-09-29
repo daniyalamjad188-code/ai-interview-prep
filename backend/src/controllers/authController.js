@@ -16,6 +16,12 @@ async function registerUser(req ,res) {
         })
     }
 
+    if (password.length < 4) {
+    return res.status(400).json({
+        message: "Password must be at least 4 characters"
+    })
+}
+
     const isUserExists =await  userModel.findOne({
         $or: [{username} , {email}]
     })
@@ -117,6 +123,8 @@ async function logoutUser (req , res){
         message:"user logout successfully"
     })
 }
+
+// getme controller
 
 async function getmeController(req ,res) {
 
