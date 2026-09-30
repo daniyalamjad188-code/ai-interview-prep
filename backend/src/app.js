@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://ai-interview-prep-dt9uxbclo-daniyalamjad188-codes-projects.vercel.app"
+        "ai-interview-prep-chi-ecru.vercel.app"
     ],
     credentials: true
 }));
